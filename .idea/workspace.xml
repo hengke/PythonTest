@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="f22bfec8-3668-41b1-91e5-70e6563754c6" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="f22bfec8-3668-41b1-91e5-70e6563754c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json/Json.py" beforeDir="false" afterPath="$PROJECT_DIR$/Json/Json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Json/getA1DataCollectionManage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Json/getA1DataCollectionManage.json" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/基础/1. 使用装饰器来衡量函数执行时间.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/基础/CPUinfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/基础/TimeTest1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PythonTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,28 +28,80 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <SUITE FILE_PATH="coverage/PythonTest$one.coverage" NAME="one Coverage Results" MODIFIED="1537690121126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/基础" />
+    <SUITE FILE_PATH="coverage/PythonTest$Json.coverage" NAME="Json Coverage Results" MODIFIED="1538144393042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Json" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
     <SUITE FILE_PATH="coverage/PythonTest$1__.coverage" NAME="1. 使用装饰器来衡量函数执行时间 Coverage Results" MODIFIED="1538033757744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/基础" />
     <SUITE FILE_PATH="coverage/PythonTest$CPUinfo.coverage" NAME="CPUinfo Coverage Results" MODIFIED="1538039258199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/基础" />
     <SUITE FILE_PATH="coverage/PythonTest$TimeTest1.coverage" NAME="TimeTest1 Coverage Results" MODIFIED="1538037998995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/基础" />
     <SUITE FILE_PATH="coverage/PythonTest$one.coverage" NAME="one Coverage Results" MODIFIED="1537841917363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/基础" />
+<<<<<<< HEAD
+=======
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-4613535">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="40" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="40" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-11370816">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="110" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="110" />
         </counts>
       </usages-collector>
     </session>
@@ -67,6 +136,16 @@
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Json/Json.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+=======
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/基础/1. 使用装饰器来衡量函数执行时间.py">
@@ -95,10 +174,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/基础/CPUinfo.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="437">
               <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding>
                 <element signature="e#35#50#0" expanded="true" />
+=======
+            <state relative-caret-position="323">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#35#50#0" expanded="true" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
               </folding>
             </state>
           </provider>
@@ -106,6 +193,11 @@
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -113,15 +205,29 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/基础/1. 使用装饰器来衡量函数执行时间.py" />
         <option value="$PROJECT_DIR$/基础/TimeTest1.py" />
         <option value="$PROJECT_DIR$/基础/CPUinfo.py" />
+=======
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Json/Json.py" />
+=======
+        <option value="$PROJECT_DIR$/基础/1. 使用装饰器来衡量函数执行时间.py" />
+        <option value="$PROJECT_DIR$/基础/TimeTest1.py" />
+        <option value="$PROJECT_DIR$/基础/CPUinfo.py" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       </list>
     </option>
   </component>
@@ -132,6 +238,14 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <option name="x" value="61" />
+    <option name="width" value="1316" />
+    <option name="height" value="780" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
     <option name="x" value="395" />
     <option name="y" value="171" />
     <option name="width" value="1315" />
@@ -139,7 +253,12 @@
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="添加" />
+<<<<<<< HEAD
+=======
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -155,16 +274,45 @@
             <path>
               <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="PythonTest" type="462c0819:PsiDirectoryNode" />
+              <item name="Excel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PythonTest" type="462c0819:PsiDirectoryNode" />
+              <item name="Json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PythonTest" type="462c0819:PsiDirectoryNode" />
               <item name="基础" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
               <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="PythonTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
               <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+<<<<<<< HEAD
+=======
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
             </path>
           </expand>
           <select />
@@ -192,8 +340,18 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.CPUinfo">
     <configuration name="1. 使用装饰器来衡量函数执行时间" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.Json">
+    <configuration name="Json" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+  <component name="RunManager" selected="Python.CPUinfo">
+    <configuration name="1. 使用装饰器来衡量函数执行时间" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <module name="PythonTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,11 +359,25 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/基础" />
+=======
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Json" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/基础" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Json/Json.py" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/基础/1. 使用装饰器来衡量函数执行时间.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -251,6 +423,10 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/基础/TimeTest1.py" />
+<<<<<<< HEAD
+=======
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -283,6 +459,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.one" />
+<<<<<<< HEAD
       <item itemvalue="Python.1. 使用装饰器来衡量函数执行时间" />
       <item itemvalue="Python.TimeTest1" />
       <item itemvalue="Python.CPUinfo" />
@@ -292,6 +469,25 @@
         <item itemvalue="Python.CPUinfo" />
         <item itemvalue="Python.TimeTest1" />
         <item itemvalue="Python.1. 使用装饰器来衡量函数执行时间" />
+=======
+<<<<<<< HEAD
+      <item itemvalue="Python.Json" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Json" />
+=======
+      <item itemvalue="Python.1. 使用装饰器来衡量函数执行时间" />
+      <item itemvalue="Python.TimeTest1" />
+      <item itemvalue="Python.CPUinfo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.CPUinfo" />
+        <item itemvalue="Python.TimeTest1" />
+        <item itemvalue="Python.1. 使用装饰器来衡量函数执行时间" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
         <item itemvalue="Python.one" />
       </list>
     </recent_temporary>
@@ -318,15 +514,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12646484" />
+=======
+<<<<<<< HEAD
+    <frame x="55" y="-7" width="1189" height="710" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25860548" />
+=======
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12646484" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3253012" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3958692" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <window_info anchor="bottom" id="Run" order="2" weight="0.328" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -334,9 +550,20 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="调试" order="13" />
+=======
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="调试" order="13" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -350,13 +577,71 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Default Changelist" />
     <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Json/Json.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Json/Json.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/基础/one.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="200">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/基础/two.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Excel/xl1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-214" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Excel/xl6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Excel/xl5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1694" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Excel/xl4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
         <state relative-caret-position="190">
           <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
         </state>
@@ -368,10 +653,33 @@
           <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding>
             <element signature="e#17#28#0" expanded="true" />
+<<<<<<< HEAD
+=======
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Excel/xl3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Excel/xl2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Json/Json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+=======
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
     <entry file="file://$PROJECT_DIR$/基础/TimeTest1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -384,10 +692,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/基础/CPUinfo.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="437">
           <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
             <element signature="e#35#50#0" expanded="true" />
+=======
+        <state relative-caret-position="323">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#35#50#0" expanded="true" />
+>>>>>>> c33ac93ca03783ed35fa8601e88483546f324644
+>>>>>>> 8bbf5398549e945745430ef60ca0262304936b80
           </folding>
         </state>
       </provider>
