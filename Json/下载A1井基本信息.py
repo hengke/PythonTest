@@ -21,7 +21,7 @@ def GetA1DataCollectionManage(url, JsonFileName, CsvFileName):
     # 7、关闭文件
     file.close()
 
-    print("当前的网页网址：%s"%AllWell_JSON.url)
+    print("当前的网页网址：%s" % AllWell_JSON.url)
     print("下载完成！")
 
     aa = json.loads(JsonStr)  # dict
@@ -51,8 +51,10 @@ if __name__ == "__main__":
     # AllWell_Url = "http://10.86.13.221/jsvc/service/A1_dataStatisBusiness/getA1DataCollectionManagePage?page=1&rows=5"
     AllWell_JsonFileName = r"F:\冀东油田数据库应用系统\冀东油田-数据库-提取地址\A1-2.0数据\getA1DataCollectionManage.json"
     AllWell_CsvFileName = r"F:\冀东油田数据库应用系统\冀东油田-数据库-提取地址\A1-2.0数据\getA1DataCollectionManage.csv"
-    if os.path.isfile(AllWell_JsonFileName) is False or os.path.isfile(AllWell_CsvFileName) is False:
-        GetA1DataCollectionManage(AllWell_Url, AllWell_JsonFileName, AllWell_CsvFileName)
+    if os.path.isfile(AllWell_JsonFileName) is False or os.path.isfile(
+            AllWell_CsvFileName) is False:
+        GetA1DataCollectionManage(AllWell_Url, AllWell_JsonFileName,
+                                  AllWell_CsvFileName)
 
     # 给定wellid参数，下载井的单井卡片
     WellCardData_Url = "http://10.86.13.221/jsvc/service/A1_dataManagement/getWellCardDataByWellId?wellId="
@@ -61,12 +63,7 @@ if __name__ == "__main__":
     with open(AllWell_JsonFileName, 'r', 1) as f:
         AllWell_Json = json.load(f)
     f.close()
-    result = {
-        "resultCode": 0,
-        "result": [],
-        "msgId": "",
-        "success": True
-    }
+    result = {"resultCode": 0, "result": [], "msgId": "", "success": True}
     i = 0
     print("开始下载单井卡片！")
     if os.path.isfile(WellCard_JsonFileName) is False:
