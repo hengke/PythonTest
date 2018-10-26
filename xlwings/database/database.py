@@ -7,6 +7,7 @@ License: BSD 3-clause (see LICENSE.txt for details)
 import sqlite3
 import os
 import xlwings as xw
+import psycopg2
 
 
 def playlist():
@@ -56,6 +57,40 @@ def playlist():
     con.close()
 
 
+
+def pg_playlist():
+    """
+    Get the playlist content based on the ID from the Dropdown
+    """
+    # Make a connection to the calling Excel file
+    wb = xw.Book.caller()
+    sht = wb.sheets.active
+
+    # Get PlaylistId from ComboBox
+    # playlist_id = wb.api.ActiveSheet.OLEObjects("ComboBox1").Object.Value
+
+    SQL = "SELECT * FROM main.\"Album\";"
+
+    with psycopg2.connect(database="xlwingsDatabaseTest", user="postgres", password="zhhkhengke", host="127.0.0.1", port="5432") as pg_conn:
+        with pg_conn.cursor() as pg_curs:
+            pg_curs.execute(SQL)
+            # Get the result and column names
+            col_names = [col[0] for col in pg_curs.description]
+            rows = pg_curs.fetchall()
+
+    # Clear the sheet and write the column names and result to Excel
+    sht.range('A9').expand().clear_contents()
+    sht.range('A9').value = col_names
+    if len(rows):
+        sht.range('A10').value = rows
+    else:
+        sht.range('A10').value = 'Empty Playlist!'
+
+    # Close cursor and connection
+    pg_curs.close()
+    pg_conn.close()
+
+
 def combobox():
     """
     This populates the ComboBox with the values from the database
@@ -91,4 +126,3 @@ def combobox():
     # Close cursor and connection
     cursor.close()
     con.close()
-
