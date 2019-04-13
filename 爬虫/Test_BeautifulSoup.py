@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import requests
 
 soup = BeautifulSoup("<html>data</html>","html.parser")
 print(soup)

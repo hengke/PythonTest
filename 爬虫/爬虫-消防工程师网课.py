@@ -5,7 +5,6 @@ import os
 
 savepath = "D:\MyHome\Documents\我的小说"
 url0 = "http://www.kanshuge.co/files/article/html/17/17211/index.html"
-url0 = "https://www.x88dushu.com/xiaoshuo/17/17585/index.html"
 if url0.find("index.html") > 0:
     url = url0.replace("index.html","")
     url1 = url0
@@ -15,16 +14,12 @@ else:
     url1 = url + "index.html"
     pass
 
-html_charset = "gbk"
 context = ssl._create_unverified_context()
 html = urllib.request.urlopen(url1, context = context)
 data = html.read()
-# result = re.search(r"<meta charset=\"(.*?)\">", data, re.S)
-# html_charset = result.group(1)
-data = data.decode(encoding=html_charset)
+data = data.decode(encoding="gb18030")
 
-# 书名
-result = re.search(r"<div class=\"rt\">.*?<h1>(.*?)</h1>.*?<em>(.*?)</em>.*?</div>", data, re.S)
+result = re.search(r"<div class=\"btitle\">.*?<h1>(.*?)</h1>.*?<em>(.*?)</em>.*?</div>", data, re.S)
 title = result.group(1)
 anthor = result.group(2)
 print(title + "。。。。。。开始下载！")
@@ -34,10 +29,7 @@ htmlsavepath = os.path.join(savepath, title)
 if  not os.path.exists(htmlsavepath) :
     os.makedirs(htmlsavepath)
 
-# 目录
-result = re.search(r"<div class=\"mulu\">(.*?)</div>", data, re.S)
-chapter = result.group(1)
-chapterlist = re.findall(r"<li><a href=\"(.*?)\">(.*?)</a></li>", chapter, re.S)
+chapterlist = re.findall(r"<dd><a href=\"(.*?)\">(.*?)</a></dd>", data, re.S)
 
 for chapter in chapterlist:
     htmlfilename = os.path.join(htmlsavepath,  chapter[0])
@@ -45,7 +37,7 @@ for chapter in chapterlist:
         url1 = url + chapter[0]
         html = urllib.request.urlopen(url1, context = context)
         data = html.read()
-        data = data.decode(encoding=html_charset)
+        data = data.decode(encoding="gb18030")
         htmlfile = open(htmlfilename, "w", 1, encoding='utf-8')
         htmlfile.write(data)
         htmlfile.close
@@ -77,7 +69,7 @@ for chapter in chapterlist:
                 file.write(lines[i])
                 file.write("\r\n")
 
-    # print(chapter[0], chapter[1])
+    print(chapter[0], chapter[1])
     pass
 
 file.close()
