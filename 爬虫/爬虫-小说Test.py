@@ -3,7 +3,7 @@ import ssl
 import os
 
 context = ssl._create_unverified_context()
-htmlsavepath = "D:\MyHome\Documents\我的小说\黑暗血时代"
+htmlsavepath = r"D:\MyHome\Documents\我的小说\黑暗血时代"
 url1 = "http://www.kanshuge.co/files/article/html/14/14930/7044899.html"
 html = urllib.request.urlopen(url1, context = context)
 print(html)
