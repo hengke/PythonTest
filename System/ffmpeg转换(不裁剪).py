@@ -26,8 +26,7 @@ def ffmpegAviToMp4(dir):
         if (not os.path.isfile(out)) and ext == ".avi":
             cmd = "D:\\Tools\\FFmpeg\\bin\\ffmpeg.exe"
             cmd = cmd + " -i \"" + dir + "\""
-            # cmd = cmd + " -vf crop=1280:720 -map 0 -c:v libx264 "
-            cmd = cmd + " -vf crop=1216:704:74:10 -map 0 -c:v libx264 "
+            cmd = cmd + " -map 0 -c:v libx264 "
             cmd = cmd + "\"" + out + "\""
             # print(cmd)
             os.system(cmd)
