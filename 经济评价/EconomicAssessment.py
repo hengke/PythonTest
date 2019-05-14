@@ -12,7 +12,7 @@ def GetSpecialOilIncome(OilPrice,exempt=65):
     if OilPrice <= exempt:
         return 0.0
     i = bisect.bisect_left(ranges, OilPrice)
-    SpecialOilIncome = OilPrice * rate[i-1] / 100 - QuickDeduction[i-1]
+    SpecialOilIncome = (OilPrice - exempt) * rate[i-1] / 100 - QuickDeduction[i-1]
     return SpecialOilIncome
 
 if __name__ == '__main__':
@@ -39,3 +39,14 @@ if __name__ == '__main__':
     print(GetSpecialOilIncome(84))
     print(GetSpecialOilIncome(85))
     print(GetSpecialOilIncome(90))
+
+    print(GetSpecialOilIncome(106.97,65))
+    print(GetSpecialOilIncome(107.2,65))
+    print(GetSpecialOilIncome(103.09,65))
+    print(GetSpecialOilIncome(99.96,65))
+    print(GetSpecialOilIncome(42.55,65))
+    print(GetSpecialOilIncome(52.48,65))
+    print(GetSpecialOilIncome(70.47,65))
+    print(GetSpecialOilIncome(58.92,65))
+    print(GetSpecialOilIncome(68.46,65))
+
