@@ -1,34 +1,53 @@
 import requests
-import re
-import ssl
 import json
-import os
+# import re
+# import ssl
+# import os
 
 if __name__ == "__main__":
     url_VideoBasic = "https://www.zongtongedu.com/video/VideoBasic"
     url_basicInfo = "https://www.zongtongedu.com/video/basicInfo"
     url_basicList = "https://www.zongtongedu.com/Video/basicList"
-    cookies = {
-        "ASP.NET_SessionId": "4qtjjehksqmxx1l4xolrxd5x",
-        "p_h5_u":"14CE65DC-11D8-4374-83E2-0964D51A19C9",
-        "selectedStreamLevel": "SD",
-        "uToKen":"480a644e33feea6dcff6685eb2eee7ef"
-    }
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "X-Requested-With": "XMLHttpRequest",
-        "Connection": "keep-alive",
-        "Cookie": "p_h5_u=14CE65DC-11D8-4374-83E2-0964D51A19C9; selectedStreamLevel=SD; ASP.NET_SessionId=4qtjjehksqmxx1l4xolrxd5x; uToKen=480a644e33feea6dcff6685eb2eee7ef",
-    }
+    # cookies = {
+    #     "ASP.NET_SessionId": "4qtjjehksqmxx1l4xolrxd5x",
+    #     "p_h5_u":"14CE65DC-11D8-4374-83E2-0964D51A19C9",
+    #     "selectedStreamLevel": "SD",
+    #     "uToKen":"480a644e33feea6dcff6685eb2eee7ef"
+    # }
+
     # 教材精讲班
     data = {
         "examid":12,
         "courseid":3,
         "vtfid":5
     }
-
-    JsonStr = requests.post(url_basicInfo, headers=headers, data=data, cookies=cookies)
+    session = requests.session()
+    LogInData = {
+        "PhoneText":"13111469643",
+        "PasswordText":"659061",
+        "chkRem":"checked"
+    }
+    session.post("https://www.zongtongedu.com/Login/login",data = LogInData)
+    userDetails = "https://www.zongtongedu.com/uc/userDetails"
+    # headers = {
+    #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
+    #     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    #     "X-Requested-With": "XMLHttpRequest",
+    #     "Connection": "keep-alive",
+    #     "path": "/uc/userDetails",
+    #     "origin": "https://www.zongtongedu.com",
+    #     "referer": "https://www.zongtongedu.com/Uc/Uc"
+    # }
+    # JsonStr = session.post(userDetails, headers=headers)
+    # result = JsonStr.encoding
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-Requested-With": "XMLHttpRequest",
+        "Connection": "keep-alive",
+    }
+    # JsonStr = session.post(url_basicInfo, headers=headers, data=data, cookies=cookies)
+    JsonStr = session.post(url_basicInfo, headers=headers, data=data)
     result = JsonStr.json()
 
     ClassInfo =  {
@@ -56,6 +75,7 @@ if __name__ == "__main__":
             }
             ClassInfo["videolist"].append(VideoInfo)
             print(VideoInfo)
-    JsonFileName = r"F:\消防工程师\2018\教材精讲班_技术综合能力.json"
+    # JsonFileName = r"F:\消防工程师\2018\教材精讲班_技术综合能力.json"
+    JsonFileName = r"C:\教材精讲班_技术综合能力.json"
     with open(JsonFileName, 'w') as f:
         json.dump(ClassInfo, f, ensure_ascii=False, indent=0)
