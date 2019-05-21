@@ -1,76 +1,61 @@
-import urllib.request
+import requests
 import re
 import ssl
+import json
 import os
 
-savepath = "D:\MyHome\Documents\我的小说"
-url0 = "http://www.kanshuge.co/files/article/html/17/17211/index.html"
-if url0.find("index.html") > 0:
-    url = url0.replace("index.html","")
-    url1 = url0
-    pass
-else:
-    url = url0
-    url1 = url + "index.html"
-    pass
+if __name__ == "__main__":
+    url_VideoBasic = "https://www.zongtongedu.com/video/VideoBasic"
+    url_basicInfo = "https://www.zongtongedu.com/video/basicInfo"
+    url_basicList = "https://www.zongtongedu.com/Video/basicList"
+    cookies = {
+        "ASP.NET_SessionId": "4qtjjehksqmxx1l4xolrxd5x",
+        "p_h5_u":"14CE65DC-11D8-4374-83E2-0964D51A19C9",
+        "selectedStreamLevel": "SD",
+        "uToKen":"480a644e33feea6dcff6685eb2eee7ef"
+    }
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-Requested-With": "XMLHttpRequest",
+        "Connection": "keep-alive",
+        "Cookie": "p_h5_u=14CE65DC-11D8-4374-83E2-0964D51A19C9; selectedStreamLevel=SD; ASP.NET_SessionId=4qtjjehksqmxx1l4xolrxd5x; uToKen=480a644e33feea6dcff6685eb2eee7ef",
+    }
+    # 教材精讲班
+    data = {
+        "examid":12,
+        "courseid":3,
+        "vtfid":5
+    }
 
-context = ssl._create_unverified_context()
-html = urllib.request.urlopen(url1, context = context)
-data = html.read()
-data = data.decode(encoding="gb18030")
+    JsonStr = requests.post(url_basicInfo, headers=headers, data=data, cookies=cookies)
+    result = JsonStr.json()
 
-result = re.search(r"<div class=\"btitle\">.*?<h1>(.*?)</h1>.*?<em>(.*?)</em>.*?</div>", data, re.S)
-title = result.group(1)
-anthor = result.group(2)
-print(title + "。。。。。。开始下载！")
-
-htmlsavepath = os.path.join(savepath, title)
-
-if  not os.path.exists(htmlsavepath) :
-    os.makedirs(htmlsavepath)
-
-chapterlist = re.findall(r"<dd><a href=\"(.*?)\">(.*?)</a></dd>", data, re.S)
-
-for chapter in chapterlist:
-    htmlfilename = os.path.join(htmlsavepath,  chapter[0])
-    if  not os.path.exists(htmlfilename) :
-        url1 = url + chapter[0]
-        html = urllib.request.urlopen(url1, context = context)
-        data = html.read()
-        data = data.decode(encoding="gb18030")
-        htmlfile = open(htmlfilename, "w", 1, encoding='utf-8')
-        htmlfile.write(data)
-        htmlfile.close
-        print(chapter[0], chapter[1], "  下载完成！")
-    else:
-        print(chapter[0], chapter[1], "  存在！ 跳过！")
-    pass
-print("下载完成！")
-
-print("开始合并！")
-file = open(os.path.join(savepath,"《" + title + "》" + anthor + ".txt"), "w", 1, encoding='utf-8')
-
-for chapter in chapterlist:
-    htmlfile = open(os.path.join(htmlsavepath,  chapter[0]), "r", encoding='utf-8')
-    data = htmlfile.read()
-    htmlfile.close
-    
-    file.write(chapter[1].replace("正文 ", ""))
-    file.write("\r\n")
-    
-    lines = re.findall(r"(?:&nbsp;)+(.*?)<", data, re.S)
-    if len(lines) != 0:
-        if re.search(r"第(.*?)章", lines[0], re.S):
-            for i in range(1, len(lines)):
-                file.write(lines[i])
-                file.write("\r\n")
-        else:
-            for i in range(0, len(lines)):
-                file.write(lines[i])
-                file.write("\r\n")
-
-    print(chapter[0], chapter[1])
-    pass
-
-file.close()
-print("合并完成！")
+    ClassInfo =  {
+        "vtfid":5,
+        "vtYear": 2018,
+        "vtTitle": "教材精讲班",
+        "classname": "技术综合能力",
+        "videolist": []
+    }
+    Chapters = result['Data']['infoList']
+    for Chapter in Chapters:
+        Sections = Chapter["infoList"]
+        for Section in Sections:
+            data = {
+                "examid": 12,
+                "courseid": Section["courseid"],
+                "vid": Section["vid"]
+            }
+            JsonStr = requests.post(url_VideoBasic, headers=headers, data=data, cookies=cookies)
+            resultVideo = JsonStr.json()
+            Title = Chapter["title"] + " " + Section["title"]
+            VideoInfo = {
+                "filename": Title.replace(" ", "_") + ".mp4",
+                "url": resultVideo['Data']['vUrl']
+            }
+            ClassInfo["videolist"].append(VideoInfo)
+            print(VideoInfo)
+    JsonFileName = r"F:\消防工程师\2018\教材精讲班_技术综合能力.json"
+    with open(JsonFileName, 'w') as f:
+        json.dump(ClassInfo, f, ensure_ascii=False, indent=0)
