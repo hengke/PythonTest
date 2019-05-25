@@ -3,6 +3,7 @@ import json
 # import re
 # import ssl
 import os
+import xmlrpc.client
 
 SavePath = r"C:\xfgcs"
 url_basicList = "https://www.zongtongedu.com/Video/basicList"
@@ -18,6 +19,7 @@ headers = {
     "X-Requested-With": "XMLHttpRequest",
     "Connection": "keep-alive",
 }
+RootSavePath = r"F:\消防工程师"
 
 def GetSectionVideoUrl(session, Chapter, Section, CourseInfo, basicInfoData):
     data = {
@@ -73,10 +75,23 @@ def GetCourseVideoUrl(session, CourseInfo, basicInfoData):
             for Section in Chapter["infoList"]:
                 GetSectionVideoUrl(session, Chapter, Section, CourseInfo, basicInfoData)
 
+    # GetVideo(CourseInfo)
     JsonFileName = os.path.join(SavePath, filename + "_VideoList.json")
     with open(JsonFileName, 'w') as f:
         json.dump(CourseInfo, f, ensure_ascii=False, indent=0)
 
+
+def GetVideo(CourseInfo):
+    SavePath = os.path.join(RootSavePath, str(CourseInfo['vtYear']), (CourseInfo['vtTitle'] + '_' + CourseInfo['classname']))
+    if not os.path.isdir(SavePath):
+        os.makedirs(SavePath)
+
+    with xmlrpc.client.ServerProxy("http://localhost:6800/rpc") as s:
+        for filevideo in CourseInfo['videolist']:
+            if not os.path.isfile(os.path.join(SavePath, filevideo['filename'])) and filevideo['url'] != '':
+                r = s.aria2.addUri([filevideo['url']], {"dir": SavePath, "out": filevideo['filename']})
+            pass
+    pass
 
 if __name__ == "__main__":
 
@@ -122,20 +137,22 @@ if __name__ == "__main__":
             GetCouses = json.load(f)
 
     for Basic in firstBasic["Data"]:
-        for Course in GetCouses["Data"]:
-            CourseInfo = {
-                "vtfid":Basic["vtfid"],
-                "vtYear": Basic["vtYear"],
-                "vtTitle": Basic["vtTitle"],
-                "classname": Course["title"],
-                "videolist": []
-            }
-            data = {
-                "examid": examid,
-                "courseid": Course["courseId"],
-                "vtfid": Basic["vtfid"]
-            }
-            GetCourseVideoUrl(session, CourseInfo, data)
-            pass
+        if Basic["vtYear"] != 2019:
+            for Course in GetCouses["Data"]:
+                CourseInfo = {
+                    "vtfid":Basic["vtfid"],
+                    "vtYear": Basic["vtYear"],
+                    "vtTitle": Basic["vtTitle"],
+                    "classname": Course["title"],
+                    "videolist": []
+                }
+                data = {
+                    "examid": examid,
+                    "courseid": Course["courseId"],
+                    "vtfid": Basic["vtfid"]
+                }
+                GetCourseVideoUrl(session, CourseInfo, data)
+                pass
+        print(Basic)
         pass
 # 只能下载2019年的数据
