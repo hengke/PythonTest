@@ -17,7 +17,11 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     "X-Requested-With": "XMLHttpRequest",
-    "Connection": "keep-alive",
+    "Connection": "keep-alive"
+}
+cookies = {
+    "ASP.NET_SessionId": "sksocyzm2imt0kbultioqvt3",
+    "uToKen": "98743884163bd75fa27f43b12e6c3a15"
 }
 RootSavePath = r"F:\消防工程师"
 
@@ -27,14 +31,14 @@ def GetSectionVideoUrl(session, Chapter, Section, CourseInfo, basicInfoData):
         "courseid": Section["courseid"],
         "vid": Section["vid"]
     }
-    # JsonStr = session.post(url_VideoBasic, headers=headers, data=data)
+    # JsonStr = session.post(url_VideoBasic, headers=headers, cookies=cookies, data=data)
     # resultVideo = JsonStr.json()
     Title = Chapter["title"] + " " + Section["title"]
     Title = Title.replace(" ", "_")
     filename = str(CourseInfo['vtYear']) + "_" + CourseInfo['vtTitle'] + "_" + CourseInfo['classname'] + "_" + Title + ".json"
     VideoListFile = os.path.join(SavePath, filename)
     if not os.path.isfile(VideoListFile):
-        JsonStr = session.post(url_VideoBasic, headers=headers, data=data)
+        JsonStr = session.post(url_VideoBasic, headers=headers, cookies=cookies, data=data)
         if JsonStr.status_code == 500:
             print(JsonStr.reason)
         else:
@@ -44,13 +48,16 @@ def GetSectionVideoUrl(session, Chapter, Section, CourseInfo, basicInfoData):
     else:
         with open(VideoListFile, "r") as f:
             resultVideo = json.load(f)
+    if resultVideo['Status'] == 0:
+        VideoInfo = {
+            "filename": str(resultVideo['Data']['order']) + "_" + Title + ".mp4",
+            "url": resultVideo['Data']['vUrl']
+        }
+        CourseInfo["videolist"].append(VideoInfo)
+        print(VideoInfo)
+    else:
+        print(resultVideo['ErrMsg'])
 
-    VideoInfo = {
-        "filename": Title + ".mp4",
-        "url": resultVideo['Data']['vUrl']
-    }
-    CourseInfo["videolist"].append(VideoInfo)
-    print(VideoInfo)
 
 def GetCourseVideoUrl(session, CourseInfo, basicInfoData):
     filename = str(CourseInfo['vtYear']) + "_" + CourseInfo['vtTitle'] + "_" + CourseInfo['classname']
@@ -100,7 +107,7 @@ if __name__ == "__main__":
     with open(os.path.join(SavePath, 'LogInData.json'), "r") as f:
         LogInData = json.load(f)
     session = requests.session()
-    session.post(url_Login, data=LogInData)
+    # session.post(url_Login, data=LogInData)
 
     firstBasicFile = os.path.join(SavePath, "firstBasic.json")
     if not os.path.isfile(firstBasicFile):
@@ -109,7 +116,7 @@ if __name__ == "__main__":
             "examid": examid,
             "year": 0
         }
-        JsonStr = session.post(url_firstBasic, headers=headers, data=data)
+        JsonStr = session.post(url_firstBasic, headers=headers, cookies=cookies, data=data)
         if JsonStr.status_code == 500:
             print(JsonStr.reason)
         else:
@@ -125,7 +132,7 @@ if __name__ == "__main__":
         data = {
             "examid":examid,
         }
-        JsonStr = session.post(url_GetCouse, headers=headers, data=data)
+        JsonStr = session.post(url_GetCouse, headers=headers, cookies=cookies, data=data)
         if JsonStr.status_code == 500:
             print(JsonStr.reason)
         else:
@@ -146,6 +153,8 @@ if __name__ == "__main__":
                     "classname": Course["title"],
                     "videolist": []
                 }
+                # if Course["title"]=="消防规范":
+                #     print("")
                 data = {
                     "examid": examid,
                     "courseid": Course["courseId"],
@@ -155,4 +164,3 @@ if __name__ == "__main__":
                 pass
         print(Basic)
         pass
-# 只能下载2019年的数据
